@@ -30,15 +30,16 @@ Step 5: create view file for Display controller functionality.
 Step 6: Create Middleware with name Ensureconfigsession.php with command “ php artisan make:middleware Ensureconfigsession”
 	Middleware is generated for check databse connection is good or expire.
 	register into kernal.php like below
+	
 	protected $routeMiddleware = [
 		...
 		'ensureconfigsession' => \App\Http\Middleware\Ensureconfigsession::class,
 	];
+	
 	then add below code into handle:
+	
 	$session_value = session('dbdetails');
-	if (empty($session_value)) {
-	return redirect('/selection');
-	}
+	if (empty($session_value)) { return redirect('/selection'); }
 	return $next($request);
 	
 step 7: For make logout from connection just click on expire connection, then you will redirect to main page and connection will lost.
