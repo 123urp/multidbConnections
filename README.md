@@ -13,16 +13,19 @@ Step 1: Firstly intstall laravel with composer with using this command :
 	- composer create-project laravel/laravel multidb
 	- cd multidb
 	- php artisan serve
+
 Step 2: Next, create controller and blade view.
 	1) Controller command is: php artisan make:controller SelectionContoller
 	page is mentioned on app/Http/Controllers/
 	2) In view folder create dbselection.blade.php and page is mentioned in resources/views/
-Step 5: Now, create Helpers with name DatabaseConnection.php and file you can get from app/Helpers/
-Step 6: Now, create DisplayController using below command.
+
+Step 3: Now, create Helpers with name DatabaseConnection.php and file you can get from app/Helpers/
+
+Step 4: Now, create DisplayController using below command.
 	- php artisan make:controller DisplayController
 	and file you can get from app/Helpers/
-Step 7: create view file for Display controller functionality.
-Step 8: Create Middleware with name Ensureconfigsession.php with command “ php artisan make:middleware Ensureconfigsession”
+Step 5: create view file for Display controller functionality.
+Step 6: Create Middleware with name Ensureconfigsession.php with command “ php artisan make:middleware Ensureconfigsession”
 	Middleware is generated for check databse connection is good or expire.
 	register into kernal.php like below
 	protected $routeMiddleware = [
@@ -35,4 +38,4 @@ Step 8: Create Middleware with name Ensureconfigsession.php with command “ php
 	return redirect('/selection');
 	}
 	return $next($request);
-step 9 : For make logout from connection just click on expire connection, then you will redirect to main page and connection will lost.
+step 7: For make logout from connection just click on expire connection, then you will redirect to main page and connection will lost.
